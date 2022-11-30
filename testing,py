@@ -1,0 +1,21 @@
+from scripts import *
+
+test_list_dna  = ["ATTTGGCTACTAACAATCTA","GTTGTAATGGCCTACATTA","CAGGTGGTGTTGTTCAGTT","GCTAACTAAC"]
+answer_list_dna = ["AUUUGGCUACUAACAAUCUA","GUUGUAAUGGCCUACAUUA","CAGGUGGUGUUGUUCAGUU","GCUAACUAAC"]
+
+test_list_codon = ["AUUUGGCUACUAACAAUCUA","GUUGUAAUGGCCUACAUUA","CAGGUGGUGUUGUUCAGUU","GCUAACUAAC"]
+answer_list_codon = ["IWLLTI","VVMAYI","QVVLFS","AN."]
+
+for i in range(len(test_list_dna)):
+    answer = convert_dna_to_rna(test_list_dna[i])
+    if answer == answer_list_dna[i]:
+        print("test passed")
+    else:
+        print("test failed")
+
+for i in range(len(test_list_codon)):
+    answer = convert_rna_to_protein(test_list_codon[i])
+    if answer == answer_list_codon[i]:
+        print("test passed")
+    else:
+        print("test failed")
